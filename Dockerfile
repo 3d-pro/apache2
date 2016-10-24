@@ -5,9 +5,7 @@ MAINTAINER Kittipun Khantitrirat <boot191@gmail.com>
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
     apt-get update && \
-    apt-get -y install software-properties-common && \
-    add-apt-repository -y ppa:ondrej/apache2 && \
-    rm -f /etc/apt/sources.list.d/ondrej-apache2-jessie.list && \
+    apt-key add /build-files/ondrej-apache2.key && \
     mv /build-files/ondrej-apache2.list /etc/apt/sources.list.d/ && \
     apt-get update && apt-get -y dist-upgrade && \
     apt-get -y install openssl curl apache2 apache2-utils && \
