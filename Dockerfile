@@ -4,7 +4,6 @@ MAINTAINER Kittipun Khantitrirat <boot191@gmail.com>
 # Apache2.4 + wsgi + web.py
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
-    apt-get update && \
     apt-key add /build-files/ondrej-apache2.key && \
     mv /build-files/ondrej-apache2.list /etc/apt/sources.list.d/ && \
     apt-get update && apt-get -y dist-upgrade && \
