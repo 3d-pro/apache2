@@ -1,7 +1,7 @@
 FROM 3dpro/openssh
 MAINTAINER Kittipun Khantitrirat <boot191@gmail.com>
 
-# Apache2.4 + wsgi + web.py
+# Apache2.4
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
     apt-key add /build-files/ondrej-apache2.key && \
@@ -16,7 +16,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
 
 ENV ALLOW_OVERRIDE **False**
 
-VOLUME ["/var/log","/etc/apache2"]
+VOLUME ["/var/log"]
 
 EXPOSE 80 443
 CMD ["/start.sh"]
