@@ -9,3 +9,6 @@ script:
    - docker pull 3dpro/openssh
    - docker build -t 3dpro/apache2 .
    - docker push 3dpro/apache2
+
+after_success:
+   - ./trigger.sh $TRAVIS_TOKEN
