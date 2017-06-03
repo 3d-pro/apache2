@@ -1,4 +1,4 @@
-# Apache 2.4 /w OpenSSL 1.0.2 image of Debian Sid [![Build Status](https://travis-ci.org/3d-pro/apache2.svg?branch=master)](https://travis-ci.org/3d-pro/apache2)
+# Apache 2.4 [![Build Status](https://travis-ci.org/3d-pro/apache2.svg?branch=master)](https://travis-ci.org/3d-pro/apache2)
 
 ## Required Docker Images
 - openssh
