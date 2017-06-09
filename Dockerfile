@@ -1,6 +1,7 @@
 FROM 3dpro/openssh
 
 ADD build-files /build-files
+ENV ALLOW_OVERRIDE=**False**
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
     apt-get update && apt-get -y dist-upgrade && \
     apt-get install -y openssl apache2 apache2-utils && \
